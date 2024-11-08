@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "p/V6GjqsnqMGpxR4WbPFgyIg86kMYPF9a6WhtLiDqPg=",
+  "Source": "BookPublishingAPI",
+  "BasePath": "_content/BookPublishingAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
