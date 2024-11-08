@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BookPublishingAPI.Context;
 using BookPublishingAPI.Entities;
+using BookPublishingAPI.DTO;
 
 namespace BookPublishingAPI.Controller
 {
@@ -11,9 +12,17 @@ namespace BookPublishingAPI.Controller
     public class PublishingController(BookContext context) : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Publishing publishing)
+        public async Task<IActionResult> Post([FromBody] PublishingDTO publishingDto)
         {
-            if (publishing is null) return BadRequest("Empty input");
+            if (publishingDto is null) return BadRequest("Empty input");
+            var publishing = new Publishing
+            {
+                AuthorId = publishingDto.AuthorId,
+                BookId = publishingDto.BookId,
+                Name = publishingDto.Name,
+                Country = publishingDto.Country,
+                PublishDate = publishingDto.PublishDate,
+            };
 
             await context.Publishings.AddAsync(publishing);
             await context.SaveChangesAsync();
@@ -23,7 +32,7 @@ namespace BookPublishingAPI.Controller
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var publishings = await context.Publishings.ToListAsync();
+            var publishings = await context.Publishings.Include(a => a.Author).Include(b => b.Book).ToListAsync();
             if (publishings is null) return NotFound("No publishings found");
 
             return Ok(publishings);

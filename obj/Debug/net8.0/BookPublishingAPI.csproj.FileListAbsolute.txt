@@ -138,3 +138,4 @@ C:\Users\Asus-01\source\repos\BookPublishingAPI\obj\Debug\net8.0\refint\BookPubl
 C:\Users\Asus-01\source\repos\BookPublishingAPI\obj\Debug\net8.0\BookPublishingAPI.pdb
 C:\Users\Asus-01\source\repos\BookPublishingAPI\obj\Debug\net8.0\BookPublishingAPI.genruntimeconfig.cache
 C:\Users\Asus-01\source\repos\BookPublishingAPI\obj\Debug\net8.0\ref\BookPublishingAPI.dll
+C:\Users\Asus-01\source\repos\BookPublishingAPI\obj\Debug\net8.0\BookPublishingAPI.sourcelink.json

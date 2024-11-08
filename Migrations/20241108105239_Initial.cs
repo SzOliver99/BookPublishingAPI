@@ -46,11 +46,11 @@ namespace BookPublishingAPI.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    AuthorId = table.Column<int>(type: "INTEGER", nullable: false),
+                    BookId = table.Column<int>(type: "INTEGER", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Country = table.Column<string>(type: "TEXT", nullable: false),
-                    PublishDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    AuthorId = table.Column<int>(type: "INTEGER", nullable: false),
-                    BookId = table.Column<int>(type: "INTEGER", nullable: false)
+                    PublishDate = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
